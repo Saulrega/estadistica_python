@@ -1,0 +1,736 @@
+Objetivos del curso:
+
+-Aprender cuando utilizar programacion dinamica y sus beneficios
+
+-Entender la diferenciaa entre programas deterministas y estocasticos
+
+-Aprender utilizar programacionn estocastica
+
+-Aprender a crear simulaciones computaionales validas
+
+
+
+
+
+
+
+
+
+
+Introducción a la Programación Dinámica
+
+En la década de los 50s Richard Bellman necesitaba financiamiento del gobierno para poder continuar con sus investigaciones, por lo que necesitaba un nombre rimbombante para que no fueran capaz de rechazar su solicitud, por lo que eligió programación dinámica. Las propias palabras de Bellman fueron:
+
+“[El nombre] Programación Dinámica se escogió para esconder a patrocinadores gubernamentales el hecho que en realidad estaba haciendo Matemáticas. La frase Programación Dinámica es algo que ningún congresista puede oponerse.” - Richard Bellman.
+
+
+
+
+
+-Subestructura Optima: una ssolucion global optima se puede encontrar al combinar soluciones optimas de subproblemas locales 
+
+
+-Problemas empalmados: una solucion optima que involucra resolver el mismo problema en varias ocasiones
+
+
+
+
+
+
+La optimizacion se basa en la “Memoization” (memorizacion):
+
+-Es una tecnica para guardar computos previos con el fin de no realizarlos nuevamente
+
+-Normalmente se utiliza un diccionario donde las consultas se pueden hacer en O(1)
+
+-Intercambia Tiempo por Espacio
+
+
+
+
+
+Por que usar diccionario y no listas?
+
+El algoritmo que usa Python internamente para buscar un elemento en un diccionario es muy distinto que el que utiliza para buscar en listas.
+
+Para buscar en las listas, se utiliza un algoritmos de comparación que tarda cada vez más a medida que la lista se hace más larga. En cambio, para buscar en diccionarios se utiliza un algoritmo llamado hash, que se basa en realizar un cálculo numérico sobre la clave del elemento, y tiene una propiedad muy interesante: sin importar cuántos elementos tenga el diccionario, el tiempo de búsqueda es siempre aproximadamente igual (O(1)).
+
+Este algoritmo de hash es también la razón por la cual las claves de los diccionarios deben ser inmutables, ya que la operación hecha sobre las claves debe dar siempre el mismo resultado, y si se utilizara una variable mutable esto no sería posible.
+
+
+
+
+
+
+
+Caminos Aleatorios
+
+¿Qué son los caminos aleatorios?
+
+Los caminos aleatorios son un tipo de simulación que elige aleatoriamente una decisión dentro de un conjunto de decisiones válidas. 
+
+Se utiliza en muchos campos del conocimiento cuando los sistemas no son deterministas e incluyen elementos de aleatoriedad.
+
+
+
+
+
+
+
+Otras propuestas: https://platzi.com/comentario/979680/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Introducción a la Programación Estocástica
+
+
+- Un programa es deterministico si cuando se corre con el mismo input produce el mismo output
+
+- Los programas deterministicos son muy importantes, pero existen problemas que no pueden resolverse de esa manera 
+
+- La programacion estocastica permite introducir aleatoriedada nuetros programas para crear simulaciones que permiten resolver otro tipo de problemas 
+
+- Los programas estocasticos se aprovechan de que las distribuciones probabilisticas de un problema se conoces o pueden ser etimados 
+
+
+
+
+
+Determinista:
+   Escribir palabras de un mensaje en el celular manualmente
+
+Estocastica:
+   Usar el autocorrector para predecir las palabras, segun al historial de palabras que usamos habitualmente y predecir cual sera la siguente palabra en el texto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cálculo de Probabilidades
+
+   - La probabilidad es una medida de la certidumbre asociada a un evento o suceso futuro y suele expresarse como un numero entre 0 y 1
+
+   - Una probabilidad de 0 significa que un suceso jamas sucedera 
+
+   - Una probabilidad de 1 significa que un suceso esta garantizado de suceder en el futuro 
+
+
+
+
+
+
+
+
+
+Libros recomendados para poder abordar mas a profundidad en estos temas y que fue de gran ayuda en mi carrera universitaria son los siguientes:
+
+   - Probability and Statistics - DeGroot
+   
+   - Introduction to Probability Models - Sheldon Ross
+   
+   - Probabilidad y aplicaciones estadísticas - Paul Meyer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inferencia Estadística
+
+   Con las simulaciones podemos calcular las probabilidades de eventos complejos sabiendo las probabilidades de eventos simples.
+
+   ¿Que pasa cuando no sabemos las probabilidades de los eventos simples? Las técnicas de la inferencia estadística nos permiten inferir/concluir las propiedades de una población a partir de una muestra aleatoria.
+
+   “El principio guía de la inferencia estadística es que una muestra aleatoria tiende a exhibir las mismas propiedades que la población de la cual fue extraída.” - John Guttag
+
+
+
+Ley de los grandes números
+
+   Con la ley de los grandes números podemos ver que en pruebas independientes repetidas con la misma probabilidad p de un resultado, la fracción de desviaciones de p converge a cero conforme la cantidad de pruebas se acerca al infinito.
+
+
+Falacia del apostador
+
+   La falacia del apostador señala que después de un evento extremo, ocurrirán eventos menos extremos para nivelar la media.
+
+   La regresion a la media señala que después de un evento aleatorio extremo, el siguiente evento probablemente será menos extremo.
+
+
+
+
+
+
+
+
+Notas: https://github.com/karlbehrensg/programacion-dinamica-y-estocastica
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Media:
+
+   Es una medidad de tendencia central
+
+   Conmumente es conocida como el promedio
+
+   La media de una poblacion se detona con el simbolo μ. La media de una muestra se detona con X̄
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Varianza:
+
+   La varianza mide que tan propagados se encuantran un conjunto de valores aleatorios de su Media
+
+   Mientras que la media nos da una idea de donde se encuentran los valores, la varianza nos dice que tan dispersos se encuentran 
+
+   La varianza siempre debe entenderse con respecto a la media 
+
+
+
+
+
+
+
+
+
+Desviacion estandar:
+
+   La desviacion estandar es la raiz cuadrada de la varianza 
+
+   Nos permite entender, tambienm la propagacion y se debe entender siempre relacionado a la media 
+
+   La ventaja sobre la varianza es que la desviacion estandar esta en las mismas unidades que la media 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Distribucion normal:
+
+   Es una de las distribuciones mas recurrentes en cualquier ambito
+
+   Se define completamente por su media y su desviacion estandar 
+
+   Permite calcular intervalos de confianza con la regla empirica 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Regla empirica:
+
+   Tambien conocida como la regla 68-95-99.7
+
+   Señala cual es la dispersion de los datos en un distribucion normla a uno, dos y tres sigmas 
+
+   Permite calcular probabilidades con la densidad de la distribucion normal 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¿Qué son las Simulaciones de Montecarlo?
+
+Stanislaw Ulam, quería calcular la probabilidad del juego perfecto de solitario, y cuando iba a ganar y cuando iba a perder. Pero llevar a cabo las combinaciones le estaba causando problemas. Se le ocurrió que podría generar simulaciones en una computadora. Le pidió ayuda a John Von Neumann quien tenía acceso a la computadora ENIAC. Y comenzaron a simular juegos de azar, y los primeros juegos que simularon fueron los juegos de los casinos de Montecarlo, por eso se llaman simulaciones de Montecarlo.
+   
+   - Sus simulaciones les sirvieron para el proyecto manhattan.
+   
+   - Simulaciones de Montecarlo.
+   
+   - Permite crear simulaciones para predecir el resultado de un problema.
+   
+   - Permite convertir problemas determinísticos en problemas estocásticos.
+   
+   - Es utilizado en una gran diversidad de áreas, desde la ingeniería hasta la biología y el derecho.
+
+
+
+
+Simulaciones de Montecarlo:
+
+   Permite crear simulaciones para predecir el resultado de un problema 
+
+   Permite convertir problemas deterministicos en problemas estocasticos 
+
+   Es utilizado en una gran diversidad de areas, desde la ingeniería hasta la biologia y el derecho
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Simulación de Barajas
+
+Codigo compañero: https://colab.research.google.com/drive/1-iKJGnMU1G_BPn7bswtYLLJh824RQjxq
+
+
+
+
+
+
+Los que quieren sabe un poco más sobre las agujas de buffon para calcular pi deberían entrar a este link:
+
+https://www.youtube.com/watch?v=sJVivjuMfWA
+
+https://www.youtube.com/watch?v=DQ5qqHukkAc
+
+
+
+
+
+
+
+
+
+Calculo estocástico de pi
+
+   - Ya en el siglo XIX esta solución fue propuesta por Laplace y en el siglo XVIII por Buffon (probabilidad geométrica)
+   
+   - Consiste en lanzar ‘dardos’ aleatoriamente a un cuadrado en el que se encuentra inscrito un circulo y calcular la relación entre los dardos que caen en el circulo y los dardos lanzados que serán proporcionales al area del circulo y del cuadrado respectivamente.
+
+
+
+
+
+
+
+Eh aqui el codigo de QuantumFracture https://docs.google.com/document/d/1Ud_FCbVrxJoowz7rW2-FsJ3VTSoDjUQbaqvFkAxquFs/edit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Muestreo
+
+   El muestreo es muy importante cuando no tenemos acceso a toda la población que queremos explorar. Uno de los grandes descubrimientos de la estadística es que las muestras aleatorias tienden a mostrar las mismas propiedades de la población objetivo. Hasta este punto todos los muestreos que hemos hecho son de tipo probabilísticos.
+
+   En un muestreo aleatorio cualquier miembro de la población tiene la misma probabilidad de ser escogido.
+
+   En un muestreo estratificado tomamos en consideración las características de la población para partirla en subgrupos y luego tomamos muestras de cada subgrupo, esto incrementa la probabilidad de que el muestreo sea representativo de la población.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Teorema del Límite Central
+
+http://195.134.76.37/applets/AppletCentralLimit/Appl_CentralLimit2.html
+
+https://www.youtube.com/watch?v=YAlJCEDH2uY
+
+https://youtu.be/z2V1LX8tK7U
+
+
+   El teorema del límite central es uno de los teoremas más importantes de la estadística. Establece que muestras aleatorias de cualquier distribución van a tener una distribución normal. Esto permite entender cualquier distribución como la distribución normal de sus medias y eso nos permite aplicar todo lo que sabemos de distribuciones normales.
+
+   Mientras más muestras obtengamos, mayor será la similitud con la distribución normal. Mientras la muestra sea de mayor tamaño, la desviación estándar será menor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¿Cómo trabajar con datos experimentales?
+
+Los datos experimentales son aquellos que se generan a través del método científico.
+
+   - Con el método científico es necesario comenzar con una teoría o hipótesis sobre el resultado al que se quiere llegar.
+
+   - Basado en la hipótesis se debe crear un experimento para validad o falsear la hipótesis.
+
+   - Se valida o falsea una hipótesis midiendo la diferencia entre las mediciones experimentales y aquellas mediciones predichas por la hipótesis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Regresión Lineal
+
+La regresión lineal nos permite aproximar una función a un conjunto de datos obtenidos de manera experimental. No necesariamente permite aproximar funciones lineales, sino que sus variantes permiten aproximar cualquier función polinómica.
+
+Para ver un ejemplo de regresiones lineales en Python en el siguiente enlace puedes acceder a ver un ejemplo: Collab - Regresión Lineal. https://colab.research.google.com/drive/1c0Lx0xQyxuoZsnVKZzMFcANykA5VWN5F#scrollTo=M-ydNFdSi8PN
+
+
+
+Stack de data scientis:
+
+   Python
+   Jupyter Notebooks
+   Pandas
+   Numpy
+   nltk (text mining)
+   matplotlib (graficos)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+¿Por qué la memoization funcionó para optimizar el algoritmo de Fibonacci?
+
+Porque evitó realizar el mismo cómputo una y otra vez.
+
+2.
+¿Qué son los programas deterministas?
+Mismo input, mismo output.
+
+3.
+¿Los caminos aleatorios se pueden utilizar únicamente en el mundo de la Física?
+
+Falso, los caminos aleatorios tienen aplicaciones en el mundo de las finanzas, de las matemáticas y hasta en el arte.
+
+4.
+¿Qué es el camino de borrachos?
+Un tipo de programa que simula aleatoriedad en el momento de tomar la decisión de dónde continuar. Es decir, toma un camino aleatorio.
+5.
+Si corremos un programa de caminos aleatorios, ¿vamos a obtener siempre la misma visualización?
+
+Falso, dado que se toman decisiones aleatorias, mientras más pasos tomamos es más difícil repetir exactamente el mismo camino.
+
+6.
+Para cada simulación que queramos escribir, ¿existe siempre una respuesta correcta sobre si el programa debe ser estocástico o determinístico?
+
+Falso, en muchas situaciones podemos escoger entre ambas opciones y nos toca decidir cuál es la que mejor resuelve nuestro problema.
+
+7.
+¿Es la probabilidad una medida de certidumbre que tenemos sobre si un evento futuro sucederá o no?
+
+Verdadero, la probabilidad nos permite cuantificar nuestra certidumbre sobre eventos futuros.
+
+8.
+La librería “random” de Python nos otorga el siguiente método:
+
+randint, para un entero aleatorio.
+
+9.
+¿Una muestra aleatoria tiende a exhibir las mismas propiedades que la población de la cual fue extraída?
+
+Verdadero, siempre y cuando sea aleatoria y representativa.
+
+10.
+¿Es la media una medida de tendencia central?
+
+Verdadero, la media es simplemente el promedio de los valores.
+
+11.
+¿Es la desviación estándar es una medida de dispersión?
+
+Verdadero, nos permite medir qué tan alejados se encuentran los valores de la media.
+
+12.
+Para describir una distribución normal, ¿necesitamos únicamente de la media y de la desviación estándar?
+
+Verdadero, esta distribución puede describirse únicamente con esos dos valores.
+
+13.
+Las simulaciones de Montecarlo, ¿únicamente pueden ser utilizadas en juegos de azar?
+
+Falso, las simulaciones de Montecarlo nos permiten modelar, a través de la aleatoriedad, aún fenómenos que no son aleatorios.
+
+14.
+¿Es posible utilizar simulaciones de Montecarlo para encontrar probabilidades de obtener diferentes tipos de manos de barajas?
+
+Verdadero, podemos simular que obtenemos barajas de manera aleatoria y ver cuántas veces sale la mano que buscamos de entre todas las manos que obtuvimos.
+
+15.
+¿La única forma de calcular PI es dividir la circunferencia entre el diámetro?
+
+Falso, podemos utilizar simulaciones de Montecarlo para calcularlo.
+
+16.
+¿Cuándo debemos hacer muestreo?
+Cuando no tenemos la capacidad computacional para calcular con todos los datos de la población o simplemente no tenemos acceso a ella.
+
+17.
+¿Es posible convertir cualquier distribución en una distribución normal?
+
+Sí, el teorema del límite central nos dice que a través de muestras de una población podemos obtener una distribución normal de estas muestras.
+
+18.
+¿Se debe siempre obtener datos antes de plantear una hipótesis?
+
+Falso, uno debe comenzar con una hipótesis, luego diseñar un experimento falseable y por último obtener los datos.
+
+19.
+La regresión lineal, ¿funciona únicamente con líneas?
+
+   !Verdadero, como su nombre lo indica, únicamente trabajamos con líneas.
+
+20.
+Los programas estocásticos, ¿nos permiten modelar fenómenos aleatorios?
+
+Verdadero, este tipo de programas nos permiten tomar en consideración la aleatoriedad cuando escribimos código.
+
+21.
+La probabilidad de que estés estudiando en Platzi y de que seas Colombiano, ¿es menor a la probabilidad de que seas Colombiano?
+
+Verdadero, siempre que utilizamos “y” la probabilidad es menor.
+
+22.
+El muestreo estratificado divide la población en subgrupos para no sesgar la muestra.
+
+Verdadero
+23.
+Podemos hacer regresiones lineales con la función de numpy "np.polyfit"
+   !Falso
